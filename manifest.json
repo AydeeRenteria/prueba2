@@ -1,0 +1,17 @@
+{
+    "name":"aydee",
+    "short_name":"App",
+    "theme_color":"#ffe08a",
+    "background_color":"#ffe08a",
+    "display":"standalone",
+    "orientation":"portrait",
+    "scope":"./",
+    "start_url":"./",
+    "icons":[
+        {
+            "src":"./icono_image.png",
+            "type":"image/png",
+            "sizes":"512x512"
+        }
+    ]
+}

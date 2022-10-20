@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NIVEL 1</title>
+    <link rel="stylesheet" href="../estilostest.css">
+
+</head>
+<body>
+    <header>
+        <h1>TEST ORTOGRAFICO</h1>
+        <h2>DIFERENCIA ENTRE A VER O HABER</h2>
+        <p>NIVEL 1 SELECCIONA LA RESPUESTA CORRECTA DEPENDIENDO DE LA ORTOGRAFIA</p>
+    </header>
+    
+    <section id="p0">
+        <h3>1¿_________, niño, cuéntame lo que te ha pasado.?</h3>
+        <label>
+            <input type="radio" value="1" name="p0" onclick="respuesta(0,this)"> A ver
+        </label>
+        <label>
+            <input type="radio" value="2" name="p0" onclick="respuesta(0,this)" > Haber
+        </label>
+        <label>
+            <input type="radio" value="3" name="p0" onclick="respuesta(0,this)"> Ninguna de las anteriores
+        </label>
+        
+    </section>
+    <section id="p1">
+        <h3>2¿Mañana vamos _________ a nuestros primos.?</h3>
+        <label>
+            <input type="radio" value="1" name="p1" onclick="respuesta(1,this)"> A ver 
+        </label>
+        <label>
+            <input type="radio" value="2" name="p1" onclick="respuesta(1,this)"> Haber
+        </label>
+        <label>
+            <input type="radio" value="3" name="p1" onclick="respuesta(1,this)"> Ninguna de las anteriores
+        </label>
+        
+    </section>
+    <section id="p2">
+        <h3>3¿De ________ sabido que hacía tanto frío no venía?</h3>
+        <label>
+            <input type="radio" value="1" name="p2" onclick="respuesta(2,this)"> A ver
+        </label>
+        <label>
+            <input type="radio" value="2" name="p2" onclick="respuesta(2,this)"> Haber
+        </label>
+        <label>
+            <input type="radio" value="3" name="p2" onclick="respuesta(2,this)"> Ninguna de las anteriores
+        </label>
+        
+    </section>
+    <section id="p3">
+        <h3>4¿Debiste _______ visto la expresión de su rostro cuando escuchó la noticia?</h3>
+        <label>
+            <input type="radio" value="1" name="p3"onclick="respuesta(3,this)"> A ver
+        </label>
+        <label>
+            <input type="radio" value="2" name="p3" onclick="respuesta(3,this)"> Haber
+        </label>
+        <label>
+            <input type="radio" value="3" name="p3"onclick="respuesta(3,this)"> Ninguna de las anteriores
+        </label>
+        
+    </section>
+    <section id="p4">
+        <h3>5¿Voy __________ cómo me las ingenio para salir de este problema?</h3>
+        <label>
+            <input type="radio" value="1" name="p4" onclick="respuesta(4,this)"> A ver
+        </label>
+        <label>
+            <input type="radio" value="2" name="p4" onclick="respuesta(4,this)"> Haber
+        </label>
+        <label>
+            <input type="radio" value="3" name="p4" onclick="respuesta(4,this)"> Ninguna de las anteriores
+        </label>
+        
+    </section>
+    <button onclick="corregir()">Calificar</button>
+    <h2>Cantidad acertadas: <span id="resultado"></span></h2>
+    <a href="../pag2/pag2.html" class="boton">Regresar al video </a><br/>
+    <a href="../pag3/pag3.html" class="boton">Siguiente Nivel</a><br/>
+    <a href="../index.html" class="boton">INICIO</a>
+
+<script>
+    let correctas =[1,1,2,2,1];
+    let opcion_elegida=[];
+    let cantidad_correctas=0;
+    function respuesta(num_pregunta,seleccionada){
+
+        opcion_elegida[num_pregunta] = seleccionada.value;
+        id="p"+num_pregunta;
+        labels= document.getElementById(id).childNodes;
+        labels[3].style.backgroundColor="white";
+        labels[5].style.backgroundColor="white";
+        labels[7].style.backgroundColor="white";
+
+        seleccionada.parentNode.style.backgroundColor="#cec0fc";
+
+
+
+    }
+
+    function corregir(){
+        cantidad_correctas=0;
+        for(i=0; i< correctas.length;i++){
+            if(correctas[i]==opcion_elegida[i]){
+                cantidad_correctas++;
+            }
+        }
+        document.getElementById("resultado").innerHTML= cantidad_correctas;
+    }
+</script>
+
+    
+</body>
+</html>

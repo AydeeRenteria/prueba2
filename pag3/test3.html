@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NIVEL 2</title>
+    <link rel="stylesheet" href="../estilostest.css">
+
+</head>
+<body>
+    <header>
+        <h1>TEST ORTOGRAFICO</h1>
+        <h2>DIFERENCIA ENTRE A  Y AH</h2>
+        <p>NIVEL 2 SELECCIONA LA RESPUESTA CORRECTA DEPENDIENDO DE LA ORTOGRAFIA</p>
+    </header>
+    
+    <section id="p0">
+        <h3>1¿Lo llamó ____ las nueve.? </h3>
+        <label>
+            <input type="radio" value="1" name="p0" onclick="respuesta(0,this)"> a
+        </label>
+        <label>
+            <input type="radio" value="2" name="p0" onclick="respuesta(0,this)" > ah
+        </label>
+        <label>
+            <input type="radio" value="3" name="p0" onclick="respuesta(0,this)"> ha
+        </label>
+        
+    </section>
+    <section id="p1">
+        <h3>2¿El alumno estará en examen ____ las cuatro de la tarde?</h3>
+        <label>
+            <input type="radio" value="1" name="p1" onclick="respuesta(1,this)"> a
+        </label>
+        <label>
+            <input type="radio" value="2" name="p1" onclick="respuesta(1,this)"> ah
+        </label>
+        <label>
+            <input type="radio" value="3" name="p1" onclick="respuesta(1,this)"> ha
+        </label>
+        
+    </section>
+    <section id="p2">
+        <h3>3¿Manuel terminó la escuela ahora irá ____ su trabajo y después a su casa?</h3>
+        <label>
+            <input type="radio" value="1" name="p2" onclick="respuesta(2,this)"> a
+        </label>
+        <label>
+            <input type="radio" value="2" name="p2" onclick="respuesta(2,this)"> ah
+        </label>
+        <label>
+            <input type="radio" value="3" name="p2" onclick="respuesta(2,this)"> ha
+        </label>
+        
+    </section>
+    <section id="p3">
+        <h3>4¿____, por qué no vas al partido con nosotros?</h3>
+        <label>
+            <input type="radio" value="1" name="p3"onclick="respuesta(3,this)"> a
+        </label>
+        <label>
+            <input type="radio" value="2" name="p3" onclick="respuesta(3,this)"> ah
+        </label>
+        <label>
+            <input type="radio" value="3" name="p3"onclick="respuesta(3,this)"> ha
+        </label>
+        
+    </section>
+    <section id="p4">
+        <h3>5¿No lo creo, ____, todo salió mal, qué pena?</h3>
+        <label>
+            <input type="radio" value="1" name="p4" onclick="respuesta(4,this)"> a
+        </label>
+        <label>
+            <input type="radio" value="2" name="p4" onclick="respuesta(4,this)"> ah
+        </label>
+        <label>
+            <input type="radio" value="3" name="p4" onclick="respuesta(4,this)"> ha
+        </label>
+        
+    </section>
+    <button onclick="corregir()">Calificar</button>
+    <h2>Cantidad acertadas: <span id="resultado"></span></h2>
+    <a href="../pag3/pag3.html" class="boton">Regresar al video </a><br/>
+    <a href="../pag4/pag4.html" class="boton">Siguiente Nivel</a><br/>
+    <a href="../index.html" class="boton">INICIO</a>
+
+<script>
+    let correctas =[1,1,1,2,2];
+    let opcion_elegida=[];
+    let cantidad_correctas=0;
+    function respuesta(num_pregunta,seleccionada){
+
+        opcion_elegida[num_pregunta] = seleccionada.value;
+        id="p"+num_pregunta;
+        labels= document.getElementById(id).childNodes;
+        labels[3].style.backgroundColor="white";
+        labels[5].style.backgroundColor="white";
+        labels[7].style.backgroundColor="white";
+
+        seleccionada.parentNode.style.backgroundColor="#cec0fc";
+
+
+
+    }
+
+    function corregir(){
+        cantidad_correctas=0;
+        for(i=0; i< correctas.length;i++){
+            if(correctas[i]==opcion_elegida[i]){
+                cantidad_correctas++;
+            }
+        }
+        document.getElementById("resultado").innerHTML= cantidad_correctas;
+    }
+</script>
+
+    
+</body>
+</html>

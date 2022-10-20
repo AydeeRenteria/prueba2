@@ -1,0 +1,43 @@
+#container#container {
+    text-align: center;
+  
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+body{
+    background-color: beige;
+}
+
+.titulo{
+    text-align: center;
+  color: #5151df;
+  
+    top: 50%;
+    transform: translateY(-50%);
+}
+.principal{
+  background-color:  rgb(44, 6, 212);
+  text-align: center;
+  font-weight: 100px;
+  text-transform: uppercase;
+}
+.boton{
+  text-decoration: none;
+  margin-bottom: 20px;
+  padding: 1%;
+  font-size: 11pt;
+  font-weight: bold;
+  border-radius: 10%;
+  border: black 2px solid;
+  background: rgb(24, 207, 24);
+  box-shadow: black 5px 5px 5px ;
+  color: black;
+  display: flexbox;
+  justify-content: center;
+  margin: 10px;
+
+}
